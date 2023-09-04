@@ -40,6 +40,9 @@ void removeValue(List* list, int value) {
     list->first = node->next;
     return;
   }
+  if(node->next == NULL) {
+    list->last = prev;
+  }
   prev->next = node->next;
   free(node);
 }

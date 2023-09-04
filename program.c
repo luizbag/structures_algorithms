@@ -12,5 +12,9 @@ int main() {
   printList(list);
   removeValue(list, 0);
   printList(list);
+  removeValue(list, 9);
+  printList(list);
+  addValue(list, 100);
+  printList(list);
   return 0;
 }
