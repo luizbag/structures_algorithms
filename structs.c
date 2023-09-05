@@ -78,6 +78,7 @@ void addAt(List* list, int position, int value) {
   new->next = current->next;
   current->next = new;
   new->next->prev = new;
+  list->length++;
 }
 
 int removeFirst(List* list) {
@@ -94,7 +95,16 @@ int removeFirst(List* list) {
 }
 
 int removeLast(List* list) {
-  return 0;
+  if(list == NULL || list->last == NULL)
+    return -1;
+  Node* node = list->last;
+  int value = node->value;
+  list->last = node->prev;
+  if(node->prev != NULL)
+    list->last->next = NULL;
+  list->length--;
+  free(node);
+  return value;
 }
 
 void printList(List* list) {
