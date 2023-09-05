@@ -9,13 +9,14 @@ List* createList() {
   return list;
 }
 
-void destroyList(List *list) {
-  printf("Destroy List\n");
+void destroyList(List **list) {
+  List *pointer = *list;
   int value;
-  while(list->first != NULL) {
-    value = removeFirst(list);
+  while(pointer->first != NULL) {
+    value = removeFirst(pointer);
   }
-  free(list);
+  free(pointer);
+  *list = NULL;
 }
 
 Node* createNode(int value) {

@@ -11,7 +11,7 @@ typedef struct header {
 } List;
 
 List* createList();
-void destroyList(List *list);
+void destroyList(List **list);
 Node* createNode(int value);
 void addFirst(List* list, int value);
 void addLast(List* list, int value);
