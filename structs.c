@@ -56,6 +56,30 @@ void addLast(List* list, int value) {
   list->length++;
 }
 
+void addAt(List* list, int position, int value) {
+  if(list == NULL || position < 0)
+    return;
+  if(position == 0) {
+    addFirst(list, value);
+    return;
+  }
+  if(position > list->length) {
+    addLast(list, value);
+    return;
+  }
+  Node* new = createNode(value);
+  Node* current = list->first;
+  int i=1;
+  while(i<position) {
+    current = current->next;
+    i++;
+  }
+  new->prev = current;
+  new->next = current->next;
+  current->next = new;
+  new->next->prev = new;
+}
+
 int removeFirst(List* list) {
   if(list == NULL || list->first == NULL)
     return -1;
