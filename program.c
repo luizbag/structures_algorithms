@@ -17,6 +17,11 @@ int main() {
   printList(list);
   printf("Removed First: %d\n", removeFirst(list));
   printList(list);
+  int pos = find(list, 200);
+  printf("Found 200 at %d\n", pos);
+  printf("Value at position %d: %d\n", pos, getValueAt(list, 5));
+  printf("Removed At %d: %d\n", pos, removeAt(list, 5));
+  printList(list);
   destroyList(&list);
   return 0;
 }
