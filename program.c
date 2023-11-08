@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include "structs.h"
+#include "list.h"
 
 int main() {
   int i;

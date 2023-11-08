@@ -1,5 +1,5 @@
 #include<stdlib.h>
-#include "structs.h"
+#include "list.h"
 
 List* createList() {
   List* list = malloc(sizeof(List));
